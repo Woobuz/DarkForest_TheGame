@@ -4,3 +4,10 @@ D:\PROJEKTY\C#\DarkForest_TheGame\Game\Game\bin\Debug\Game.pdb
 D:\PROJEKTY\C#\DarkForest_TheGame\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
 D:\PROJEKTY\C#\DarkForest_TheGame\Game\Game\obj\Debug\Game.exe
 D:\PROJEKTY\C#\DarkForest_TheGame\Game\Game\obj\Debug\Game.pdb
+D:\PROJEKTY\C#\DFGame\Game\bin\Debug\Game.exe.config
+D:\PROJEKTY\C#\DFGame\Game\bin\Debug\Game.exe
+D:\PROJEKTY\C#\DFGame\Game\bin\Debug\Game.pdb
+D:\PROJEKTY\C#\DFGame\Game\obj\Debug\Game.csprojAssemblyReference.cache
+D:\PROJEKTY\C#\DFGame\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\PROJEKTY\C#\DFGame\Game\obj\Debug\Game.exe
+D:\PROJEKTY\C#\DFGame\Game\obj\Debug\Game.pdb

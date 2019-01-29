@@ -21,7 +21,7 @@ namespace DF
                      enemy = " ? ",
                      trader = " H ";
         const int size = 20,     //rozmiar mapy
-                     density = 10;  //gęstość obiektów (3 drzewa : 1 przeciwnik)
+                     density = 8;  //gęstość obiektów (3 drzewa : 1 przeciwnik)
         static int positionX = size / 2 - 1, //pozycja gracza
                      positionY = size / 2 - 1, //
                      trees = 0,
