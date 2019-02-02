@@ -55,6 +55,7 @@ namespace DF
                     case ConsoleKey.A:
                         Communicates.Add("Player hit " + name + " with " + Player.damage + " damage. Received " + damage + " damage from "+name+".");
                         hp -= Player.damage;
+                        if (hp > 0)
                         Player.hp -= damage;
                         break;
                     case ConsoleKey.H:

@@ -239,7 +239,7 @@ namespace DF
                 Console.WriteLine();
                 Console.WriteLine("[P]otion 1/" + Player.potions + "" +
                     "              Price: 20G\n[U]pgrade Weapon 5/" + Player.damage + "" +
-                    "      Price: 50G\n[H]ealth+ 10/" + Player.maxHp + "" +
+                    "      Price: 100G\n[H]ealth+ 10/" + Player.maxHp + "" +
                     "          Price: 80G\n[A]xe " + axe + "/1" +
                     "                 Price: 200G\n[ESC] Go Back");
                 ConsoleKeyInfo choose = Console.ReadKey();
@@ -253,10 +253,10 @@ namespace DF
                         }
                         break;
                     case ConsoleKey.U:
-                        if (Player.gold >= 50)
+                        if (Player.gold >= 100)
                         {
                             Player.damage += 5;
-                            Player.gold -= 50;
+                            Player.gold -= 100;
                         }
                         break;
                     case ConsoleKey.H:
