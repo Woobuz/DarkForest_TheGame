@@ -41,8 +41,8 @@ namespace DF
                 if (Player.hp <= 0)
                 {
                     Console.Clear();
-                    Renders.RenderInfo("You are DEAD!\n");
-                    Console.WriteLine("Press enter to restart the game");
+                    Renders.RenderInfo("\t\t\tYou are DEAD!\t\t\t\t\n");
+                    Console.WriteLine("\t\tPress enter to restart the game\t\t");
                     Console.ReadLine();
                     Console.Clear();
                     resetGame();
@@ -51,8 +51,8 @@ namespace DF
                 if (enemies == 0)
                 {
                     Console.Clear();
-                    Renders.RenderInfo("You've completed your objective! Congratulations!!!\n");
-                    Console.WriteLine("Press enter to restart the game");
+                    Renders.RenderInfo("\t\tYou've completed your objective! Congratulations!!!\t\t\n");
+                    Console.WriteLine("\t\t\tPress enter to restart the game");
                     Console.ReadLine();
                     Console.Clear();
                     resetGame();
@@ -221,7 +221,7 @@ namespace DF
                 enemy.fight();
                 Console.Clear();
                 if (Player.hp <= 0) return;
-                Console.WriteLine("You defeated " + enemy.name + ". Earned " + enemy.Gold + "G.");
+                Renders.RenderInfo("\t\tYou defeated " + enemy.name + ". Earned " + enemy.Gold + "G.\t\t");
                 Player.gold += enemy.Gold;
             }
             Console.ReadLine();
@@ -342,6 +342,13 @@ namespace DF
         public static void RenderInfo(string value)
         {
             Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(value);
+            Console.ResetColor();
+        }
+        public static void RenderPotions(string value)
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(value);
             Console.ResetColor();

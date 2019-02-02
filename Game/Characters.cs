@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DF
 {
@@ -19,6 +20,7 @@ namespace DF
                     G;
         public string name;
         public int Gold;
+        List<string> Communicates = new List<string>() { };
         public Enemy(string name, int hp, int maxHp, int damage, int G)
         {
             this.hp = hp;
@@ -28,6 +30,13 @@ namespace DF
             this.G = G;
             Gold = this.G;
         }
+        public void showCommunicates()
+        {
+            foreach (string x in Communicates)
+            {
+                Console.WriteLine(x);
+            }
+        }
         public void fight()
         {
             Console.Clear();
@@ -35,18 +44,22 @@ namespace DF
             while (x == 1)
             {
                 Console.Clear();
-                Console.WriteLine("Player's Health: " + Player.hp + "/" + Player.maxHp + "         Enemy's Health: " + hp + "/" + maxHp + "\nPotions: " + Player.potions);
-                Console.WriteLine("\nPress A to attack / Press H to use potion (+25HP)");
+                Renders.RenderInfo("Player's Health: " + Player.hp + "/" + Player.maxHp + "         Enemy's Health: " + hp + "/" + maxHp + "\t");
+                Renders.RenderPotions("  Potions: " + Player.potions+" \n");
+                Console.WriteLine("\nPress A to attack\t\t\tPress H to use potion (+25HP)\n");
+                showCommunicates();
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
                 switch (keyInfo.Key) //WALKA
                 {
                     case ConsoleKey.A:
+                        Communicates.Add("Player hit " + name + " with " + Player.damage + " damage. " + name + " hit Player with " + damage + " damage.");
                         hp -= Player.damage;
                         Player.hp -= damage;
                         break;
                     case ConsoleKey.H:
                         if (Player.potions > 0 && Player.hp < Player.maxHp)
                         {
+                            Communicates.Add("Player has used healing potion.");
                             Player.hp += 25;
                             if (Player.hp > Player.maxHp) Player.hp = Player.maxHp;
                             Player.potions--;
@@ -55,6 +68,7 @@ namespace DF
                 }
                 if (hp <= 0 || Player.hp <= 0)
                 {
+                    Communicates.Clear();
                     x = 0;
                 }
             }
