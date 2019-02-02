@@ -169,23 +169,24 @@ namespace DF
         } //Poruszanie Graczem po świecie
         static void enemyEvent()
         {
-            Enemy enemy = new Enemy("", 0, 0, 0, 0);
+            Enemy enemy = new Enemy("", 0, 0, 0, 0, 0);
             bool isEnemy = false;
 
             Random rnd = new Random();
             int randomEnemy = rnd.Next(1, 10); //o 1 wiecej
+
             switch (randomEnemy)
             {
                 case 1:
-                    enemy = new Enemy("Goblin", 15, 15, 8, 12);
+                    enemy = new Enemy("Goblin", 15, 15, 8, 13, 12);
                     isEnemy = true;
                     break;
                 case 2:
-                    enemy = new Enemy("Thug", 30, 30, 24, 43);
+                    enemy = new Enemy("Thug", 30, 30, 18, 26, 43);
                     isEnemy = true;
                     break;
                 case 3:
-                    enemy = new Enemy("Dragon", 120, 120, 49, 265);
+                    enemy = new Enemy("Dragon", 120, 120, 45, 81, 265);
                     isEnemy = true;
                     break;
                 case 4:
@@ -195,15 +196,15 @@ namespace DF
                     Player.gold += randomGold;
                     break;
                 case 5:
-                    enemy = new Enemy("Lihzard", 25, 25, 12, 23);
+                    enemy = new Enemy("Lihzard", 25, 25, 5, 11, 23);
                     isEnemy = true;
                     break;
                 case 6:
-                    enemy = new Enemy("Orc", 43, 43, 32, 86);
+                    enemy = new Enemy("Orc", 43, 43, 19, 32, 86);
                     isEnemy = true;
                     break;
                 case 7:
-                    enemy = new Enemy("Troll", 78, 78, 40, 156);
+                    enemy = new Enemy("Troll", 69, 69, 1, 150, 145);
                     isEnemy = true;
                     break;
                 case 8:
