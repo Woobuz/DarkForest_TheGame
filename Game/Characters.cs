@@ -10,7 +10,7 @@ namespace DF
                           maxHp = 100,
                           potions = 5,
                           damage = 9,
-                          gold = 200;
+                          gold = 50;
     }
     class Enemy
     {
@@ -34,7 +34,8 @@ namespace DF
         {
             foreach (string x in Communicates)
             {
-                Console.WriteLine(x);
+                Renders.RenderInfo(x);
+                Console.WriteLine();
             }
         }
         public void fight()
@@ -52,14 +53,14 @@ namespace DF
                 switch (keyInfo.Key) //WALKA
                 {
                     case ConsoleKey.A:
-                        Communicates.Add("Player hit " + name + " with " + Player.damage + " damage. " + name + " hit Player with " + damage + " damage.");
+                        Communicates.Add("Player hit " + name + " with " + Player.damage + " damage. Received " + damage + " damage from "+name+".");
                         hp -= Player.damage;
                         Player.hp -= damage;
                         break;
                     case ConsoleKey.H:
                         if (Player.potions > 0 && Player.hp < Player.maxHp)
                         {
-                            Communicates.Add("Player has used healing potion.");
+                            Communicates.Add("Player used healing potion.");
                             Player.hp += 25;
                             if (Player.hp > Player.maxHp) Player.hp = Player.maxHp;
                             Player.potions--;
